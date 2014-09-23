@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+//var debug = require('debug')('NServ');
+//var app = require('../app');
+//
+//app.set('port', process.env.PORT || 3000);
+//
+//var server = app.listen(app.get('port'), function() {
+//  debug('Express server listening on port ' + server.address().port);
+//});
+
+var Server = require("../lib/server");
+var config = require("../config.json");
+var servers = [];
+for (var i = 0; i < config.servers.length; i++) {
+  var server = config.servers[i];
+  console.log('Building new server: %s ', server.name);
+  servers.push(new Server(server));
+}
+
+
+
+for (i = 0; i < servers.length; i++) {
+  servers[i].run();
+}
