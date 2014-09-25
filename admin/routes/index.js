@@ -10,4 +10,8 @@ router.use('/partials', function(req, res) {
   res.render('partials' + req.url);
 });
 
+router.use('/views', function(req, res) {
+  res.render('views' + req.url);
+});
+
 module.exports = router;

@@ -1,18 +1,41 @@
 @import (reference) "mixins";
 
-@headerHeight: 40px;
 
 .header {
-  .gradient(#697075, #424649);
-  height: @headerHeight;
-  line-height: @headerHeight;
+  @height: 40px;
+  @color: #CDCDCD;
+  @bgStart: #697075;
+  @bgEnd: #424649;
+
+
+  .gradient(@bgStart, @bgEnd);
+  height: @height;
+  line-height: @height;
   cursor: default;
+  color: @color;
+  text-shadow: #000 0 1px 0;
 
   .title {
-    text-shadow: #000 0 1px 0;
-    color: #CDCDCD;
     display: inline-block;
     margin: 0 30px;
+  }
+
+  .menu {
+    display: inline-block;
+    li {
+      @height: 20px;
+      font-size: 12px;
+      display: inline-block;
+      padding: 0 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      height: @height;
+      line-height: @height;
+      &:hover {
+        .gradient(lighten(@bgEnd, 25%), lighten(@bgStart, 10%));
+        color: lighten(@color, 20%);
+      }
+    }
   }
 }
 
