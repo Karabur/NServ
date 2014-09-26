@@ -2,12 +2,12 @@
 app.config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/servers");
   //
   // Now set up the states
   $stateProvider
-    .state('default', {
-      url: "/",
+    .state('servers', {
+      url: "/servers",
       templateUrl: "views/servers"
     })
 });

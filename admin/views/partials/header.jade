@@ -1,5 +1,5 @@
 div.header(ng-controller="HeaderCtrl")
   div.title NServ
   ul.menu
-    li Servers
+    li(ng-class="{active : activeItem == 'servers'}") Servers
     li Something...

@@ -31,7 +31,7 @@
       border-radius: 10px;
       height: @height;
       line-height: @height;
-      &:hover {
+      &:hover, &.active {
         .gradient(lighten(@bgEnd, 25%), lighten(@bgStart, 10%));
         color: lighten(@color, 20%);
       }
