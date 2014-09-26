@@ -1,0 +1,26 @@
+@import (reference) "mixins";
+
+.serversList {
+
+  .listContainer {
+    padding: 20px;
+    .server {
+      @bgColor: #E7E8E9;
+      display: inline-block;
+      padding: 20px;
+      background: @bgColor;
+      border: #b8b9ba;
+      .box-shadow(#ccc 1px 1px 1px);
+      margin: 10px;
+      min-width: 100px;
+      min-height: 100px;
+      cursor: pointer;
+      &:hover {
+        background: lighten(@bgColor, 3%);
+        .box-shadow(#ccc 1px 1px 2px);
+      }
+    }
+  }
+
+}
+

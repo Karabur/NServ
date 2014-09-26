@@ -1,3 +1,5 @@
 div(ng-include="'partials/header'")
-div.main(ng-controller="MainCtrl")
-  | {{ x }}
+div.serversList(ng-controller="ServersCtrl")
+  ul.listContainer
+    li.server(ng-repeat="server in servers") {{ server.name }}
+
