@@ -1,9 +1,27 @@
 @import (reference) "mixins";
 
-.serversList {
+.servers-list {
+  flex: 1 0 auto;
+  display: flex;
 
-  .listContainer {
-    padding: 20px;
+  .list-container {
+    position: relative;
+    padding: 20px 26px 20px 20px;
+    overflow-y: scroll;
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      right: 2px;
+      top: 5px;
+      bottom: 5px;
+      width: 4px;
+      background: #f4f4f4;
+      border-radius: 3px;
+      border: 1px solid #DFDCDC;
+      box-shadow: 1px 1px 0px #b2b2b2;
+    }
+
     .server {
       @bgColor: #E7E8E9;
       display: inline-block;
@@ -17,7 +35,7 @@
       cursor: pointer;
       &:hover {
         background: lighten(@bgColor, 3%);
-        .box-shadow(#ccc 1px 1px 2px);
+        .box-shadow(#ABABAB 1px 1px 2px);
       }
     }
   }

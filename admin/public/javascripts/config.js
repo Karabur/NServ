@@ -8,6 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('servers', {
       url: "/servers",
-      templateUrl: "views/servers"
+      templateUrl: "views/servers",
+      controller:'ServersCtrl'
     })
 });
