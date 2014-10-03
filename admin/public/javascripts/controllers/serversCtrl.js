@@ -4,5 +4,9 @@ app.controller('ServersCtrl', function ($scope){
     name:'Test'
   }, {
     name:'Test2'
-  }]
+  }];
+
+  $scope.showServer = function (server) {
+
+  }
 });

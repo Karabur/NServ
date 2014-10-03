@@ -149,3 +149,17 @@
   -ms-transform-origin: @x @y;
   -o-transform-origin: @x @y;
 }
+
+.rightTriangle (@bg, @height, @scaleFactor:2) {
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: @height/sqrt(2);
+    height: @height/sqrt(2);
+    background: url(@bg);
+    top: @height*(1 - 1/sqrt(2))/2;
+    right: -@height/sqrt(2)/2;
+    transform: scaleX(1/@scaleFactor) rotate(45deg);
+  }
+}

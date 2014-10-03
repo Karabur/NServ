@@ -1,9 +1,10 @@
 @import (reference) "mixins";
+@import (reference) "colors";
 
 
 .header {
   @height: 40px;
-  @color: #CDCDCD;
+  @color: @textWhite;
   @bgStart: #697075;
   @bgEnd: #424649;
 
@@ -13,6 +14,8 @@
   cursor: default;
   color: @color;
   text-shadow: #000 0 1px 0;
+  position: relative;
+  z-index: 20;
 
   .title {
     display: inline-block;

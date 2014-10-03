@@ -1,7 +1,8 @@
 div.servers-list
   div.left-sidebar
     div.toolbar
-      button.add +
+      button.add + Add server
     ul.list-container
-     li.server(ng-repeat="server in servers") {{ server.name }}
+     li.server(ng-repeat="server in servers", ng-click="showServer(server)",
+        ng-class="{'active': $index==0}") {{ server.name }}
 

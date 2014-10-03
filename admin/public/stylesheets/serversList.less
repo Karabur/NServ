@@ -4,64 +4,85 @@
 .servers-list {
   flex: 1 0 auto;
   display: flex;
+  text-shadow: #000 1px 1px;
+  color: @textWhite;
+  position: relative;
+  z-index: 10;
+
   .left-sidebar {
     position: relative;
     width: 300px;
-    &:after {
-      display: block;
-      content: '';
-      position: absolute;
-      right: 2px;
-      top: 5px;
-      bottom: 5px;
-      width: 4px;
-      background: #f4f4f4;
-      border-radius: 3px;
-      border: 1px solid #DFDCDC;
-      box-shadow: 1px 1px 0px #b2b2b2;
-    }
-
+    background: rgba(30, 30, 30, 0.4);
   }
 
   .left-sidebar .toolbar {
-    @height: 30px;
+    @height: 40px;
+    @bgStart: #585858;
+    @bgEnd: #4d4d4d;
     height: @height;
-    padding: 0 20px;
+    padding: 5px 20px;
     text-align: right;
-    margin-top: 10px;
+    position: relative;
+
+    .gradient(@bgStart, @bgEnd);
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #222;
+    box-shadow: 0 0px 10px #222;
+    z-index: 5;
+
     button {
       display: inline-block;
-      height: @height;
-      line-height: @height;
+      height: 100%;
+      line-height: 100%;
       padding: 0;
-      width: 30px;
-      background-color: @btnColor;
-      color: white;
-      font-size: 20px;
+      color: @textWhite;
+      background: none;
+      border: none;
+      text-shadow: 1px 1px #222;
+      font-size: 14px;
       font-family: 'Arial', Helvetica, sans-serif;
       cursor: pointer;
+      &:hover {
+        color: lighten(@textWhite, 30%);
+      }
     }
   }
 
   .left-sidebar .list-container {
     position: relative;
-    padding: 20px 26px 20px 20px;
-    overflow-y: scroll;
+    z-index: 1;
 
     .server {
-      @bgColor: #E7E8E9;
-      display: inline-block;
-      padding: 20px;
-      background: @bgColor;
-      border: #b8b9ba;
-      .box-shadow(#ccc 1px 1px 1px);
-      margin: 10px;
-      min-width: 100px;
-      min-height: 100px;
+      @height: 40px;
+      position: relative;
+      display: block;
+      padding: 0 20px;
+      background: url(../images/bg-light.png);
+      height: @height;
+      line-height: @height;
       cursor: pointer;
+      border-bottom: 1px solid #222;
+      border-top: 1px solid #555;
+      z-index: 10;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       &:hover {
-        background: lighten(@bgColor, 3%);
-        .box-shadow(#ABABAB 1px 1px 2px);
+        box-shadow: 0 0 10px #222;
+        z-index: 20;
+        + .server {
+          border-top: 1px solid transparent;
+        }
+      }
+
+      &.active {
+        .rightTriangle('../images/bg-light.png', @height)
       }
     }
   }
