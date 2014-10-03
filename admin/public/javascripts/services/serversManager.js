@@ -11,6 +11,9 @@ app.service('ServersManager', function ($q, $http) {
   return {
     readList: function () {
       return executeRequest('servers');
+    },
+    loadServer: function (id) {
+      return executeRequest('servers/'+id);
     }
   }
 });
