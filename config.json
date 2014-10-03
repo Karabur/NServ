@@ -16,7 +16,8 @@
         "public"
       ],
       "less": "public",
-      "logger": true
+      "logger": true,
+      "locked": true
     }
   ]
 }
