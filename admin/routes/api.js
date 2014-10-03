@@ -14,8 +14,8 @@ router.get('/servers/:id', function(req, res) {
   var server = _.find(config['servers'], function (srv) {
     return srv.id == req.params.id;
   });
-
-  res.json(server);
+  if (!server) { res.status(404); }
+  else { res.json(server); }
 });
 
 
