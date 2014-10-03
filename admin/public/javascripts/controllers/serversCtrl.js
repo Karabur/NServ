@@ -1,10 +1,8 @@
 'use strict';
-app.controller('ServersCtrl', function ($scope){
-  $scope.servers = [{
-    name:'Test'
-  }, {
-    name:'Test2'
-  }];
+app.controller('ServersCtrl', function ($scope, ServersManager){
+  ServersManager.readList().then(function (res) {
+    $scope.servers = res;
+  });
 
   $scope.showServer = function (server) {
 
