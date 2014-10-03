@@ -6,5 +6,9 @@ app.controller('ServersCtrl', function ($scope, ServersManager, $state){
 
   $scope.showServer = function (server) {
     $state.go('servers.server', {id: server.id});
+  };
+
+  $scope.isServerActive = function (server) {
+    return $state.is('servers.server') && $state.params.id == server.id;
   }
 });
