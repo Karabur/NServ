@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "angular-ui-router": "~0.2.11",
-    "angular": "~1.2.25"
+    "angular": "~1.2.25",
+    "font-awesome": "~4.2.0"
   }
 }
