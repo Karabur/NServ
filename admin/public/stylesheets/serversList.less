@@ -1,13 +1,12 @@
 @import (reference) "mixins";
+@import (reference) "colors";
 
 .servers-list {
   flex: 1 0 auto;
   display: flex;
-
-  .list-container {
+  .left-sidebar {
     position: relative;
-    padding: 20px 26px 20px 20px;
-    overflow-y: scroll;
+    width: 300px;
     &:after {
       display: block;
       content: '';
@@ -21,6 +20,33 @@
       border: 1px solid #DFDCDC;
       box-shadow: 1px 1px 0px #b2b2b2;
     }
+
+  }
+
+  .left-sidebar .toolbar {
+    @height: 30px;
+    height: @height;
+    padding: 0 20px;
+    text-align: right;
+    margin-top: 10px;
+    button {
+      display: inline-block;
+      height: @height;
+      line-height: @height;
+      padding: 0;
+      width: 30px;
+      background-color: @btnColor;
+      color: white;
+      font-size: 20px;
+      font-family: 'Arial', Helvetica, sans-serif;
+      cursor: pointer;
+    }
+  }
+
+  .left-sidebar .list-container {
+    position: relative;
+    padding: 20px 26px 20px 20px;
+    overflow-y: scroll;
 
     .server {
       @bgColor: #E7E8E9;

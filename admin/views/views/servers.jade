@@ -1,4 +1,7 @@
 div.servers-list
-  ul.list-container
-    li.server(ng-repeat="server in servers") {{ server.name }}
+  div.left-sidebar
+    div.toolbar
+      button.add +
+    ul.list-container
+     li.server(ng-repeat="server in servers") {{ server.name }}
 
