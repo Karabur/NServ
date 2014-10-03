@@ -6,4 +6,4 @@ div.servers-list
      li.server(ng-repeat="server in servers", ng-click="showServer(server)",
         ng-class="{'active': $index==0}") {{ server.name }}
        i.fa.fa-lock.icon(ng-if="server.locked")
-
+  ui-view.server-panel

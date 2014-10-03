@@ -1,6 +1,7 @@
 {
   "servers": [
     {
+      "id": 1,
       "name": "NServ Admin",
       "type": "express",
       "basePath": "/Users/ant/pets/NServ/admin",

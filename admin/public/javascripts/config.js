@@ -11,4 +11,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/servers",
       controller:'ServersCtrl'
     })
+    .state('servers.server', {
+      url:'/:id',
+      templateUrl: "views/serverPanel",
+      controller: "ServerPanelCtrl"
+    })
 });
