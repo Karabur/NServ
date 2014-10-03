@@ -30,20 +30,32 @@
     box-shadow: 0 0px 10px #222;
     z-index: 5;
 
-    button {
+    .add-server {
       display: inline-block;
-      height: 100%;
-      line-height: 100%;
+      height: @height - 10px - 2px;
+      line-height: @height - 10px - 2px;
       padding: 0;
       color: @textWhite;
-      background: none;
-      border: none;
       text-shadow: 1px 1px #222;
       font-size: 14px;
       font-family: 'Arial', Helvetica, sans-serif;
       cursor: pointer;
       &:hover {
         color: lighten(@textWhite, 30%);
+      }
+    }
+
+    .add-server-field {
+      height: 100%;
+      input {
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        border: 2px #999 dashed;
+        border-radius: 2px;
+        color: @textWhite;
+        font-size: 15px;
+        width: 100%;
+        padding: 0 5px;
       }
     }
   }

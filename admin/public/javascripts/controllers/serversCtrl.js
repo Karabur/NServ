@@ -4,6 +4,17 @@ app.controller('ServersCtrl', function ($scope, ServersManager, $state){
     $scope.servers = res;
   });
 
+  $scope.addingMode = false;
+
+  $scope.addServer = function () {
+    $scope.addingMode = true;
+  };
+
+  $scope.createServer = function (name) {
+    console.log('create', name);
+    $scope.addingMode = false;
+  };
+
   $scope.showServer = function (server) {
     $state.go('servers.server', {id: server.id});
   };
@@ -11,4 +22,5 @@ app.controller('ServersCtrl', function ($scope, ServersManager, $state){
   $scope.isServerActive = function (server) {
     return $state.is('servers.server') && $state.params.id == server.id;
   }
+
 });

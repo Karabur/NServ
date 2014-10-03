@@ -1,7 +1,9 @@
 div.servers-list
   div.left-sidebar
     div.toolbar
-      button.add + Add server
+      a.add-server(ng-if="!addingMode", ng-click="addServer()") + Add server
+      div.add-server-field(ng-if="addingMode")
+        input(type="text", auto-focus="addingMode", ng-enter="createServer(newServerName)", ng-model="newServerName")
     ul.list-container
      li.server(ng-repeat="server in servers", ng-click="showServer(server)",
         ng-class="{'active': isServerActive(server)}") {{ server.name }}
