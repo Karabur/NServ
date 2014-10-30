@@ -1,26 +1,25 @@
 'use strict';
-app.controller('ServersCtrl', function ($scope, ServersManager, $state){
-  ServersManager.readList().then(function (res) {
-    $scope.servers = res;
-  });
+app.controller('ServersCtrl', function ($scope, ServersManager, $state) {
+  angular.extend($scope, {
 
-  $scope.addingMode = false;
+    servers: ServersManager.readList(),
+    addingMode: false,
 
-  $scope.addServer = function () {
-    $scope.addingMode = true;
-  };
+    addServer: function () {
+      $scope.addingMode = true;
+    },
 
-  $scope.createServer = function (name) {
-    console.log('create', name);
-    $scope.addingMode = false;
-  };
+    createServer: function (name) {
+      console.log('create', name);
+      $scope.addingMode = false;
+    },
 
-  $scope.showServer = function (server) {
-    $state.go('servers.server', {id: server.id});
-  };
+    showServer: function (server) {
+      $state.go('servers.server', {id: server.id});
+    },
 
-  $scope.isServerActive = function (server) {
-    return $state.is('servers.server') && $state.params.id == server.id;
-  }
-
+    isServerActive: function (server) {
+      return $state.is('servers.server') && $state.params.id == server.id;
+    }
+  })
 });

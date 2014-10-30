@@ -1,19 +1,22 @@
 'use strict';
-app.service('ServersManager', function ($q, $http) {
+app.service('ServersManager', function ($q, $http, $resource) {
   var apiBase = '/api/';
-  function executeRequest(path) {
-    path = apiBase + path;
-    return $http.get(path).then(function (res) {
-      return res.data;
-    });
-  }
+  var servers = $resource(apiBase + 'servers/:id', {
+    id: '@id'
+  }, {
+    list: {
+      isArray: true
+    }
+  });
 
   return {
     readList: function () {
-      return executeRequest('servers');
+      return servers.list();
     },
     loadServer: function (id) {
-      return executeRequest('servers/'+id);
+      return servers.get({id: id});
+    },
+    createServer: function (name) {
     }
   }
 });
