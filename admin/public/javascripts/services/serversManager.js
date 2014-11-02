@@ -17,6 +17,9 @@ app.service('ServersManager', function ($q, $http, $resource) {
       return servers.get({id: id});
     },
     createServer: function (name) {
+      return servers.save({
+        name: name
+      })
     }
   }
 });

@@ -10,8 +10,8 @@ app.controller('ServersCtrl', function ($scope, ServersManager, $state) {
     },
 
     createServer: function (name) {
-      console.log('create', name);
       $scope.addingMode = false;
+      ServersManager.createServer(name);
     },
 
     showServer: function (server) {

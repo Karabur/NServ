@@ -9,10 +9,11 @@
 //});
 
 var Server = require("../lib/server");
-var config = require("../config.json");
+var ServerRepo = require("../lib/serversRepo");
 var servers = [];
-for (var i = 0; i < config.servers.length; i++) {
-  var server = config.servers[i];
+var serversDesc = ServerRepo.getServers();
+for (var i = 0; i < serversDesc.length; i++) {
+  var server = serversDesc[i];
   console.log('Building new server: %s ', server.name);
   servers.push(new Server(server));
 }
